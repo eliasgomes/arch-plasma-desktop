@@ -14,7 +14,7 @@ set $mod Mod4
 # My config
 
 hide_edge_borders both
-# workspace_layout tabbed
+workspace_layout tabbed
 title_align center
 focus_follows_mouse no
 
