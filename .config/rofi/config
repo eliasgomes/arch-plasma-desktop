@@ -1,0 +1,6 @@
+rofi.modi:          drun
+rofi.theme:         i3
+rofi.font:          Roboto Bold 30
+rofi.width:         35
+rofi.lines:         5
+rofi.display-drun:  Run
