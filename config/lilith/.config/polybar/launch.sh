@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Terminate already running bar instances
 killall -q polybar
@@ -7,6 +7,4 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the top bar
-polybar top &
-
-echo "Bars launched..."
+polybar top &!
