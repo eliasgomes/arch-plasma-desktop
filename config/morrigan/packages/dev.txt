@@ -1,0 +1,7 @@
+docker
+docker-compose
+nodejs
+npm
+python
+python-pip
+python-pipenv
