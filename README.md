@@ -31,10 +31,12 @@ or
 
     wifi-menu # :)
 
-### Undefined
+### Time and Date
 
     timedatectl set-ntp true
     timedatectl status
+
+### Partitions
 
     fdisk -l
     fdisk /dev/nvme0n1
@@ -54,32 +56,45 @@ or
     mkdir /mnt/home
     mount /dev/nvme0n1p3 /mnt/home
 
+### Base System
+
     pacstrap /mnt base base-devel dialog wpa_supplicant
 
     genfstab -U /mnt >> /mnt/etc/fstab
 
     arch-chroot /mnt
 
+### Timezone and Clock
+
     ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
     hwclock --systohc
+
+### Locale
 
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
     locale-gen
     echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+### Hostname and Hosts
 
     echo "morrigan" > /etc/hostname
 
     echo "127.0.0.1 localhost morrigan" > /etc/hosts
     echo "::1 localhost morrigan" >> /etc/hosts
 
+### Password
+
     passwd
+
+### Boot Manager
 
     pacman -S grub efibootmgr
     grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="Arch Linux"
     grub-mkconfig -o /boot/grub/grub.cfg
 
-    exit
+### Finish Installation
 
+    exit
     umount -R /mnt
     reboot
 
@@ -87,9 +102,3 @@ or
 
     pacman -S sudo zsh vim git xorg-server xorg-xinit i3 termite firefox
     useradd -m -s /usr/bin/zsh eliasgomes
-
-## Files
-
-    /etc/sudoers
-    .xinitrc
-    .Xresources
