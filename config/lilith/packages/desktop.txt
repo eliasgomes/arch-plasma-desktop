@@ -28,7 +28,6 @@ i3lock
 i3status
 lxappearance-gtk3
 lxde-icon-theme
-lxinput-gtk3
 materia-gtk-theme
 noto-fonts
 noto-fonts-emoji
