@@ -40,9 +40,11 @@ xrandr --dpi 96
 setxkbmap -model pc105 -layout us -variant intl
 
 # mouse
-# device_id=9
-# xinput --set-prop ${device_id} 'libinput Accel Speed' -1
-# xinput set-ptr-feedback ${device_id} 0 20 10
+device_id=14
+xinput --set-prop ${device_id} 'libinput Accel Speed' 1
+xinput --set-prop ${device_id} 'libinput Natural Scrolling Enabled' 1
+xinput --set-prop ${device_id} 'libinput Tapping Enabled' 1
+xinput set-ptr-feedback ${device_id} 0 70 10
  
 # background
 xsetroot -solid '#000000'
