@@ -158,7 +158,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
 type = internal/i3
-format = <label-state>
+format = <label-state>     %{F#a6e22e}<label-mode>%{F-}
 pin-workspaces = true
 
 ws-icon-0 = Home;%{F#747c84}%{F-}
