@@ -31,7 +31,7 @@ alert = #bd2c40
 ;monitor = ${env:MONITOR:HDMI-1}
 dpi = 140
 width = 100%
-height = 45
+height = 55
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -41,26 +41,26 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = #dfdfdf
 
-border-size = 5
+border-size = 0
 border-color = #222
 border-bottom = 0
 
-padding-left = 0
-padding-right = 2
+padding-left = 5
+padding-right = 5
 
 module-margin-left = 0
-module-margin-right = 5
+module-margin-right = 7
 
 font-0 = Roboto:style=Bold:size=10;1
 font-1 = Font Awesome 5 Free:style=Solid:size=10;1
 font-2 = Font Awesome 5 Free:style=Regular:size=10;1
 font-3 = Unifont:size=10;0
 
-modules-left = i3
-modules-center = 
-modules-right = cpu memory root-filesystem home-filesystem wifi date time-new-york time-amsterdam
+modules-left = cpu memory root-filesystem home-filesystem
+modules-center = i3
+modules-right = wifi date time-new-york time-amsterdam
 
 tray-position = right
 tray-padding = 2
@@ -78,62 +78,6 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/root-filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %used% %{F#99}·%{F-} %free%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/home-filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /home
-
-label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %used% %{F#99}·%{F-} %free%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/i3]
-type = internal/i3
-format = <label-state>     %{F#a6e22e}<label-mode>%{F-}
-pin-workspaces = true
-
-ws-icon-0 = term;%{F#747c84}%{F-}
-ws-icon-1 = web;%{F#747c84}%{F-}
-ws-icon-2 = code;%{F#747c84}%{F-}
-ws-icon-3 = music;%{F#747c84}%{F-}
-ws-icon-4 = whatsapp;%{F#747c84}%{F-}
-ws-icon-default = %{F#747c84}%{F-}
-
-label-dimmed-underline = ${root.background}
-
-label-focused = %icon%  %name%
-label-focused-foreground = #f3f3f3
-label-focused-background = #3f3f3f
-;label-focused-underline = #${colors.accent}
-label-focused-underline = #a6e22e
-label-focused-padding = 4
-
-label-unfocused = %icon%  %name%
-label-unfocused-underline = #555555
-label-unfocused-padding = 4
-
-label-urgent = %icon%  %name%
-label-urgent-foreground = #000000
-;label-urgent-background = #bd2c40
-;label-urgent-underline = #9b0a20
-label-urgent-underline = #ff0000
-label-urgent-padding = 4
-
-label-visible = %icon%  %name%
-label-visible-foreground = #55ffffff
-label-visible-padding = 4
 
 [module/cpu]
 type = internal/cpu
@@ -179,6 +123,62 @@ bar-used-fill = █
 bar-used-empty = █
 bar-used-empty-foreground = #44
 
+[module/root-filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/home-filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /home
+
+label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/i3]
+type = internal/i3
+format = <label-state>     %{F#a6e22e}<label-mode>%{F-}
+pin-workspaces = true
+
+ws-icon-0 = Home;%{F#747c84}%{F-}
+ws-icon-1 = Work;%{F#747c84}%{F-}
+ws-icon-2 = Dev;%{F#747c84}%{F-}
+ws-icon-3 = Ops;%{F#747c84}%{F-}
+ws-icon-4 = TV & Music;%{F#747c84} %{F-}
+ws-icon-default = %{F#747c84}%{F-}
+
+label-dimmed-underline = ${root.background}
+
+label-focused = %icon%  %name%
+label-focused-foreground = #f3f3f3
+label-focused-background = #3f3f3f
+;label-focused-underline = #${colors.accent}
+label-focused-underline = #a6e22e
+label-focused-padding = 4
+
+label-unfocused = %icon%  %name%
+label-unfocused-underline = #555555
+label-unfocused-padding = 4
+
+label-urgent = %icon%  %name%
+label-urgent-foreground = #000000
+;label-urgent-background = #bd2c40
+;label-urgent-underline = #9b0a20
+label-urgent-underline = #ff0000
+label-urgent-padding = 4
+
+label-visible = %icon%  %name%
+label-visible-foreground = #55ffffff
+label-visible-padding = 4
+
 [module/wifi]
 type = internal/network
 interface = wlp5s0
@@ -186,7 +186,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #a6e22e
-label-connected = %{F#747c84}%{F-}  %essid% %{F#99}·%{F-} %local_ip%
+label-connected = %{F#747c84}%{F-}  %essid%  %{F#99}·%{F-}  %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -205,7 +205,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date = %{F#747c84}%{F-}  %A %{F#99}·%{F-} %d %B %Y
+date = %{F#747c84}%{F-}  %A  %{F#99}·%{F-}  %d %B %Y
 
 format-prefix-foreground = ${colors.foreground-alt}
 
@@ -213,12 +213,12 @@ label = %date%
 
 [module/time-new-york]
 type = custom/script
-exec = TZ=America/New_York date +"%{F#747c84}%{F-}  %H:%M %{F#99}·%{F-} New York"
+exec = TZ=America/New_York date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  New York"
 interval = 30
 
 [module/time-amsterdam]
 type = custom/script
-exec = TZ=Europe/Amsterdam date +"%{F#747c84}%{F-}  %H:%M %{F#99}·%{F-} Amsterdam"
+exec = TZ=Europe/Amsterdam date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  Amsterdam"
 interval = 30
 format-underline = #dfdfdf
 

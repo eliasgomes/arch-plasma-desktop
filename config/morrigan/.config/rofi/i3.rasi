@@ -133,6 +133,6 @@
 #textbox-prompt-colon {
     expand:     false;
     str:        ":";
-    margin:     0px 0.3em 0em 0em ;
+    margin:     0px 0.3em 0em 0em;
     text-color: @normal-foreground;
 }
