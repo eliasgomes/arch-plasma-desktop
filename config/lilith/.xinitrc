@@ -48,7 +48,7 @@ xinput set-ptr-feedback ${device_id} 0 70 10
  
 # background
 xsetroot -solid '#000000'
-feh --bg-fill --no-fehbg "$HOME/Pictures/cats_blue_eyes_animals_pets_4288x2848.jpg"
+feh --bg-fill --no-fehbg "$HOME/Pictures/04052_hubblessharpestviewoftheorionnebula_3360x2100.jpg"
 
 dunst &!
 exec i3
