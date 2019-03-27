@@ -15,7 +15,6 @@ eog
 faenza-icon-theme
 feh
 firefox
-gnome-calculator
 gnome-screenshot
 gnome-system-monitor
 gnome-themes-extra
