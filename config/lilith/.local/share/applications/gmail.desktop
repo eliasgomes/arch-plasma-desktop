@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Gmail
+Exec=/usr/bin/google-chrome-stable --app="https://gmail.com"

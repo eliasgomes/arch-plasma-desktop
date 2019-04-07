@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Localhost
+Exec=/usr/bin/google-chrome-stable --app="http://localhost:8080"

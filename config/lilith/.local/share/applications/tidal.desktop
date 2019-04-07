@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=TIDAL
+Exec=/usr/bin/google-chrome-stable --app="https://listen.tidal.com"

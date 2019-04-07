@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Google Maps
+Exec=/usr/bin/google-chrome-stable --app="https://maps.google.com"
