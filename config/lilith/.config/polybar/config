@@ -29,9 +29,9 @@ alert = #bd2c40
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
-dpi = 170
+dpi = 168
 width = 100%
-height = 64
+height = 50
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -44,23 +44,23 @@ line-size = 3
 line-color = #dfdfdf
 
 border-size = 0
-border-color = #222
-border-bottom = 0
+border-color = #111111
+border-bottom = 5
 
 padding-left = 5
 padding-right = 5
 
 module-margin-left = 0
-module-margin-right = 7
+module-margin-right = 5
 
-font-0 = Roboto:style=Bold:size=10;1
+font-0 = Roboto:style=Regular:size=10;1
 font-1 = Font Awesome 5 Free:style=Solid:size=10;1
 font-2 = Font Awesome 5 Free:style=Regular:size=10;1
 font-3 = Unifont:size=10;0
 
-modules-left = battery cpu memory root-filesystem home-filesystem
+modules-left = cpu memory root-filesystem home-filesystem battery
 modules-center = i3
-modules-right = wifi date time-new-york time-amsterdam
+modules-right = wifi date time-amsterdam time-new-york
 
 tray-position = right
 tray-padding = 2
@@ -142,7 +142,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%
+label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%  %{F#747c84}· %used% · %free%%{F-}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -152,7 +152,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%
+label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%  %{F#747c84}· %used% · %free%%{F-}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
