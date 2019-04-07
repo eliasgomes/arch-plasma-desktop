@@ -59,6 +59,7 @@ xcursor-simpleandsoft
 xcursor-themes
 xcursor-vanilla-dmz
 xcursor-vanilla-dmz-aa
+xorg-xbacklight
 xorg-server
 xorg-xinit
 xorg-xrandr
