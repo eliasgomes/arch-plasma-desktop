@@ -31,7 +31,7 @@ alert = #bd2c40
 ;monitor = ${env:MONITOR:HDMI-1}
 dpi = 168
 width = 100%
-height = 50
+height = 52
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -45,7 +45,6 @@ line-color = #dfdfdf
 
 border-size = 0
 border-color = #111111
-border-bottom = 5
 
 padding-left = 5
 padding-right = 5
@@ -53,14 +52,15 @@ padding-right = 5
 module-margin-left = 0
 module-margin-right = 5
 
-font-0 = Roboto:style=Regular:size=10;1
-font-1 = Font Awesome 5 Free:style=Solid:size=10;1
-font-2 = Font Awesome 5 Free:style=Regular:size=10;1
-font-3 = Unifont:size=10;0
+font-0 = Roboto Condensed:style=Regular:size=11;1
+font-1 = Roboto Condensed:style=Bold:size=13;1
+font-2 = Font Awesome 5 Free:style=Solid:size=10;1
+font-3 = Font Awesome 5 Free:style=Regular:size=10;1
+font-4 = Unifont:size=10;0
 
-modules-left = cpu memory root-filesystem home-filesystem battery
+modules-left = cpu memory root-filesystem home-filesystem
 modules-center = i3
-modules-right = wifi date time-amsterdam time-new-york
+modules-right = battery wifi date time-new-york time-amsterdam
 
 tray-position = right
 tray-padding = 2
@@ -119,7 +119,7 @@ ramp-coreload-7-foreground = #ff5555
 
 [module/memory]
 type = internal/memory
-interval = 0.2
+interval = 0.5
 format = <label> <bar-used>
 
 label = "%{F#747c84}%{F-}  RAM  "
@@ -138,7 +138,7 @@ bar-used-empty-foreground = #44
 
 [module/root-filesystem]
 type = internal/fs
-interval = 25
+interval = 10
 
 mount-0 = /
 
@@ -148,7 +148,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/home-filesystem]
 type = internal/fs
-interval = 25
+interval = 10
 
 mount-0 = /home
 
@@ -160,12 +160,14 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/i3
 format = <label-state>     %{F#a6e22e}<label-mode>%{F-}
 pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
 
-ws-icon-0 = Home;%{F#747c84}%{F-}
-ws-icon-1 = Work;%{F#747c84}%{F-}
-ws-icon-2 = Dev;%{F#747c84}%{F-}
-ws-icon-3 = Ops;%{F#747c84}%{F-}
-ws-icon-4 = TV & Music;%{F#747c84} %{F-}
+ws-icon-0 = 1:Home;%{F#747c84}%{F-}
+ws-icon-1 = 2:Office;%{F#747c84}%{F-}
+ws-icon-2 = 3:Dev;%{F#747c84}%{F-}
+ws-icon-3 = 4:Ops;%{F#747c84}%{F-}
+ws-icon-4 = 5:Music & TV;%{F#747c84} %{F-}
 ws-icon-default = %{F#747c84}%{F-}
 
 label-dimmed-underline = ${root.background}
@@ -195,7 +197,7 @@ label-visible-padding = 4
 [module/wifi]
 type = internal/network
 interface = wlp59s0
-interval = 3.0
+interval = 5
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #a6e22e
@@ -226,14 +228,16 @@ label = %date%
 
 [module/time-new-york]
 type = custom/script
-exec = TZ=America/New_York date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  New York"
-interval = 30
+exec = TZ=America/New_York date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  NYC"
+interval = 5
+format-underline = #6699ff
 
 [module/time-amsterdam]
 type = custom/script
-exec = TZ=Europe/Amsterdam date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  Amsterdam"
-interval = 30
-format-underline = #dfdfdf
+exec = TZ=Europe/Amsterdam date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  AMS"
+interval = 5
+format-underline = #ff9900
+label-font = 2
 
 [settings]
 screenchange-reload = true
