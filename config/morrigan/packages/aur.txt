@@ -1,5 +1,4 @@
 ttf-ms-fonts
-polybar
 google-chrome
 spotify
 visual-studio-code-bin
