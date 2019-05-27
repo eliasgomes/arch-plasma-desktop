@@ -17,3 +17,4 @@ htop
 git
 curl
 openssh
+iw
