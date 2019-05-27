@@ -29,9 +29,10 @@ alert = #bd2c40
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
-dpi = 140
+monitor = ${env:MONITOR:DP-2}
+dpi = 144
 width = 100%
-height = 55
+height = 44
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
@@ -44,23 +45,23 @@ line-size = 3
 line-color = #dfdfdf
 
 border-size = 0
-border-color = #222
-border-bottom = 0
+border-color = #111111
 
 padding-left = 5
 padding-right = 5
 
 module-margin-left = 0
-module-margin-right = 7
+module-margin-right = 5
 
-font-0 = Roboto:style=Bold:size=10;1
-font-1 = Font Awesome 5 Free:style=Solid:size=10;1
-font-2 = Font Awesome 5 Free:style=Regular:size=10;1
-font-3 = Unifont:size=10;0
+font-0 = Roboto Condensed:style=Regular:size=12;1
+font-1 = Roboto Condensed:style=Bold:size=14;1
+font-2 = Font Awesome 5 Free:style=Solid:size=10;1
+font-3 = Font Awesome 5 Free:style=Regular:size=10;1
+font-4 = Unifont:size=10;0
 
 modules-left = cpu memory root-filesystem home-filesystem
 modules-center = i3
-modules-right = wifi date time-new-york time-amsterdam
+modules-right = network date time-new-york time-amsterdam
 
 tray-position = right
 tray-padding = 2
@@ -129,7 +130,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%
+label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%  %{F#747c84}· %used% · %free%%{F-}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -139,7 +140,7 @@ interval = 25
 
 mount-0 = /home
 
-label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%
+label-mounted = %{F#747c84}%{F-}  %{F#a6e22e}%mountpoint%%{F-}  %{F#99}·%{F-}  %percentage_used%%  %{F#747c84}· %used% · %free%%{F-}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -147,12 +148,14 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/i3
 format = <label-state>     %{F#a6e22e}<label-mode>%{F-}
 pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
 
-ws-icon-0 = Home;%{F#747c84}%{F-}
-ws-icon-1 = Work;%{F#747c84}%{F-}
-ws-icon-2 = Dev;%{F#747c84}%{F-}
-ws-icon-3 = Ops;%{F#747c84}%{F-}
-ws-icon-4 = TV & Music;%{F#747c84} %{F-}
+ws-icon-0 = 1:Home;%{F#747c84}%{F-}
+ws-icon-1 = 2:Work;%{F#747c84}%{F-}
+ws-icon-2 = 3:Dev;%{F#747c84}%{F-}
+ws-icon-3 = 4:Ops;%{F#747c84}%{F-}
+ws-icon-4 = 5:Music & TV;%{F#747c84} %{F-}
 ws-icon-default = %{F#747c84}%{F-}
 
 label-dimmed-underline = ${root.background}
@@ -176,17 +179,19 @@ label-urgent-underline = #ff0000
 label-urgent-padding = 4
 
 label-visible = %icon%  %name%
-label-visible-foreground = #55ffffff
+label-visible-foreground = #ffffff
 label-visible-padding = 4
 
-[module/wifi]
+[module/network]
 type = internal/network
+;interface = enp0s31f6
 interface = wlp5s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #a6e22e
 label-connected = %{F#747c84}%{F-}  %essid%  %{F#99}·%{F-}  %local_ip%
+;label-connected = %{F#747c84}%{F-}  Cable  %{F#99}·%{F-}  %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -213,14 +218,20 @@ label = %date%
 
 [module/time-new-york]
 type = custom/script
-exec = TZ=America/New_York date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  New York"
-interval = 30
+interval = 1
+
+exec = TZ=America/New_York date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  NYC"
+format-underline = #0088ff
 
 [module/time-amsterdam]
-type = custom/script
-exec = TZ=Europe/Amsterdam date +"%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  Amsterdam"
-interval = 30
-format-underline = #dfdfdf
+type = internal/date
+interval = 1
+
+time = "%{F#747c84}%{F-}  %H:%M  %{F#99}·%{F-}  AMS"
+
+format-underline = #ff7700
+label = %time%
+label-font = 2
 
 [settings]
 screenchange-reload = true
