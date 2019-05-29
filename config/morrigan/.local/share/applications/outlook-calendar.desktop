@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Outlook Calendar
+Exec=/usr/bin/google-chrome-stable --app="https://outlook.office.com/calendar/view/workweek"

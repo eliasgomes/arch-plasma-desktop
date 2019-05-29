@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Facebook
+Exec=/usr/bin/google-chrome-stable --app="https://facebook.com"

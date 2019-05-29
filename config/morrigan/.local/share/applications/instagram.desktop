@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Instagram
+Exec=/usr/bin/google-chrome-stable --app="https://instagram.com"

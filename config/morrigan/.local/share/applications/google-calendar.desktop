@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Google Calendar
+Exec=/usr/bin/google-chrome-stable --app="https://calendar.google.com"
