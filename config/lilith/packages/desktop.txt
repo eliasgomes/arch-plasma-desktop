@@ -21,7 +21,6 @@ lxde-icon-theme
 materia-gtk-theme
 noto-fonts
 noto-fonts-emoji
-numix-gtk-theme
 nvidia
 nvidia-settings
 nvidia-utils
