@@ -1,4 +1,4 @@
-# arch-i3-desktop
+# Arch Plasma Desktop
 
 ## Pre-Installation
 
