@@ -4,7 +4,6 @@
 
 Download the ISO from https://www.archlinux.org/download/
 
-
 Find out the name of your USB drive:
 
     lsblk
@@ -58,7 +57,7 @@ or
 
 ### Base System
 
-    pacstrap /mnt base base-devel dialog wpa_supplicant
+    pacstrap /mnt base linux linux-firmware
 
     genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -92,13 +91,21 @@ or
     grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="Arch Linux"
     grub-mkconfig -o /boot/grub/grub.cfg
 
+### Basic Packages
+
+    pacman -S base-devel sudo zsh vim git openssh xorg plasma konsole firefox vlc spectacle dialog wpa_supplicant netctl
+
+### User
+
+    useradd -m -s /usr/bin/zsh eliasgomes
+    passwd eliasgomes
+
+### Desktop Manager
+
+    systemctl enable sddm
+
 ### Finish Installation
 
     exit
     umount -R /mnt
     reboot
-
-## Post-Installation
-
-    pacman -S sudo zsh vim git xorg-server xorg-xinit i3 termite firefox
-    useradd -m -s /usr/bin/zsh eliasgomes
