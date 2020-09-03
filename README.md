@@ -93,7 +93,7 @@ or
 
 ### Basic Packages
 
-    pacman -S base-devel sudo zsh vim git openssh xorg plasma konsole firefox vlc spectacle dialog wpa_supplicant netctl
+    pacman -S base-devel sudo zsh vim git openssh net-tools xorg plasma konsole firefox vlc spectacle dialog wpa_supplicant netctl
 
 ### User
 
