@@ -35,7 +35,6 @@ ttf-freefont
 ttf-liberation
 ttf-roboto
 ttf-ubuntu-font-family
-unicode-emoji
 vlc
 xclip
 xcursor-bluecurve
