@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Jira
+Icon=google-chrome
+Exec=/usr/bin/google-chrome-stable --app="https://eliasgomes.atlassian.net/jira/software/projects/EG/boards/3"

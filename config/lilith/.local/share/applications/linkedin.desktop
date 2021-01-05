@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LinkedIn
-Exec=/usr/bin/google-chrome-stable --app="https://linkedin.com"

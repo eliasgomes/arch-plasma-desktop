@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=GitHub
-Exec=/usr/bin/google-chrome-stable --app="https://github.com/eliasgomes"

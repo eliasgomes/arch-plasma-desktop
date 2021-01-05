@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Spotify
-Exec=/usr/bin/google-chrome-stable --app="https://play.spotify.com"
