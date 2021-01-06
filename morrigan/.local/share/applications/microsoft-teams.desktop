@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Microsoft Teams
+Icon=google-chrome
+Exec=/usr/bin/google-chrome-stable --app="https://teams.microsoft.com/_#/calendarv2"
