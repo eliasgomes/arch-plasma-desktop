@@ -54,3 +54,4 @@ xorg-xinit
 xorg-xrandr
 xorg-xsetroot
 xorg-xinput
+imwheel # systemctl --user enable imwheel # systemctl --user start imwheel # systemctl --user status imwheel

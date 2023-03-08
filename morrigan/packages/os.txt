@@ -6,7 +6,6 @@ alsa-plugins
 alsa-utils
 pulseaudio
 pulseaudio-alsa
-pavucontrol
 playerctl
 vim
 sudo
