@@ -2,12 +2,11 @@ efibootmgr
 grub
 dosfstools
 ntfs-3g
-dialog
-wpa_supplicant
 alsa-plugins
 alsa-utils
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 playerctl
 vim
 sudo
@@ -16,4 +15,4 @@ htop
 git
 curl
 openssh
-iw
+iwd

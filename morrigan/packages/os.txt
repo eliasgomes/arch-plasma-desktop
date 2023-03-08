@@ -2,8 +2,6 @@ efibootmgr
 grub
 dosfstools
 ntfs-3g
-dialog
-wpa_supplicant
 alsa-plugins
 alsa-utils
 pulseaudio
@@ -17,3 +15,4 @@ htop
 git
 curl
 openssh
+iwd

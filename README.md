@@ -18,17 +18,14 @@ BIOS:
 
 ## Installation
 
-### Network/Internet
+### Internet
 
-    ip link
-    ip link set interface up
-    wpa_passphrase MYSSID passphrase > /etc/wpa_supplicant/example.conf
-    wpa_supplicant -B -i interface -c /etc/wpa_supplicant/example.conf
-    dhcpcd interface
-
-or
-
-    wifi-menu # :)
+    iwctl
+    [iwd]# device list
+    [iwd]# station wlan0 scan
+    [iwd]# station wlan0 get-networks
+    [iwd]# station wlan0 connect SSID
+    [iwd]# station wlan0 show
 
 ### Time and Date
 
@@ -93,7 +90,7 @@ or
 
 ### Basic Packages
 
-    pacman -S base-devel sudo zsh vim git openssh net-tools xorg plasma konsole firefox vlc spectacle dialog wpa_supplicant netctl
+    pacman -S base-devel sudo zsh vim git openssh net-tools xorg plasma konsole firefox vlc spectacle iwd
 
 ### User
 
