@@ -18,7 +18,7 @@ BIOS:
 
 ## Installation
 
-### Internet
+### Wi-Fi & Internet
 
     iwctl
     [iwd]# device list
@@ -90,12 +90,19 @@ BIOS:
 
 ### Basic Packages
 
-    pacman -S base-devel sudo zsh vim git openssh net-tools xorg plasma konsole firefox vlc spectacle iwd
+    pacman -S base-devel sudo zsh vim git openssh net-tools iwd xorg plasma konsole firefox vlc spectacle
 
 ### User
 
     useradd -m -s /usr/bin/zsh eliasgomes
     passwd eliasgomes
+
+### DHCP
+
+    /etc/iwd/main.conf
+
+    [General]
+    EnableNetworkConfiguration=true
 
 ### Desktop Manager
 
