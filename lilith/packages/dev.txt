@@ -6,4 +6,6 @@ nodejs
 npm
 python
 python-pip
+python-pipx
 python-pipenv
+github-cli

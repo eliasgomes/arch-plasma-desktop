@@ -1,3 +1,5 @@
+ark
+dolphin
 adapta-gtk-theme
 adobe-source-code-pro-fonts
 adobe-source-sans-pro-fonts
