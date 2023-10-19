@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=WhatsApp
-Icon=google-chrome
-Exec=/usr/bin/google-chrome-stable --app="https://web.whatsapp.com"

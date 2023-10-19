@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=South Park
-Icon=google-chrome
-Exec=/usr/bin/google-chrome-stable --app="https://southpark.cc.com"

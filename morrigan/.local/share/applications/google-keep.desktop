@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Google Keep
-Icon=google-chrome
-Exec=/usr/bin/google-chrome-stable --app="https://meet.google.com"
