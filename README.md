@@ -12,15 +12,18 @@ Copy the image to your USB drive:
 
     sudo dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
-BIOS:
-    System Configuration > SATA Operation > AHCI
-    Note: This will allow Linux to detect the NVME SSD.
+### BIOS Configuration
+
+System Configuration > SATA Operation > AHCI
+
+**Note:** This will allow Linux to detect the NVME SSD.
 
 ## Installation
 
 ### Wi-Fi & Internet
 
     iwctl
+
     [iwd]# device list
     [iwd]# station wlan0 scan
     [iwd]# station wlan0 get-networks
@@ -69,6 +72,7 @@ BIOS:
 
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
     locale-gen
+
     echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 ### Hostname and Hosts
@@ -90,7 +94,7 @@ BIOS:
 
 ### Basic Packages
 
-    pacman -S base-devel sudo zsh vim git openssh net-tools iwd xorg plasma konsole firefox vlc spectacle
+    pacman -S base-devel sudo less zsh vim git github-cli openssh net-tools iwd networkmanager plasma konsole ark dolphin gwenview spectacle firefox vlc
 
 ### User
 
@@ -104,6 +108,11 @@ BIOS:
     [General]
     EnableNetworkConfiguration=true
 
+### Enabling Network Services
+
+    systemctl enable iwd
+    systemctl enable NetworkManager
+
 ### Desktop Manager
 
     systemctl enable sddm
@@ -113,3 +122,9 @@ BIOS:
     exit
     umount -R /mnt
     reboot
+
+## Post-Installation
+
+### GitHub Authentication
+
+    gh auth login

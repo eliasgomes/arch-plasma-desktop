@@ -1,12 +1,51 @@
 docker
 docker-compose
 docker-buildx
-minikube
+
+git
+github-cli
+
 kubectl
-nodejs
-npm
+minikube
+
+jdk-openjdk
+
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# nodejs -> nvm install lts/iron
+# npm -> nvm install lts/iron
+# yarn -> corepack enable
+# npm install -g firebase-tools
+
+# curl https://pyenv.run | bash
 python
 python-pip
 python-pipx
 python-pipenv
-github-cli
+
+# VS Code Settings
+{
+  "editor.fontFamily": "'Source Code Pro', monospace",
+  "editor.fontSize": 16,
+  "editor.fontWeight": "600",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "files.enableTrash": false,
+  "workbench.startupEditor": "none",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

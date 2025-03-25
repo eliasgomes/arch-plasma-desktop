@@ -1,4 +1,5 @@
-ttf-ms-fonts
 google-chrome
 spotify
+surfshark-client
+ttf-ms-fonts
 visual-studio-code-bin
